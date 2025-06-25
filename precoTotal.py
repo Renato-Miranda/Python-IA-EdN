@@ -7,7 +7,7 @@ def main():
         preco_total = preco_unitario * quantidade
         print(f"Quantidade: {quantidade}")
         print(f"Produto: {produto}")
-        print(f"O valor total é de: {preco_total} Reais.")
+        print(f"O valor total é de: {preco_total:.2f} Reais.")
 
     preco_total()    
 
