@@ -1,9 +1,9 @@
 def main():
 
     def calcular_volume():
-        comprimento = 12
-        largura = 14 
-        altura = 20 
+        comprimento = int(input("Comprimento: "))
+        largura = int(input("Largura: "))
+        altura = int(input("altura: "))
         volume = comprimento * largura * altura
         print("O volume da caixa é:", volume, "cm³.")
 
