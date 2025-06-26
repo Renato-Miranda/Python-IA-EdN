@@ -6,6 +6,7 @@ def calculadora_desconto():
     preco_com_desconto = preco_original - valor_do_desconto
 
     print(
+        f"Produto - {produto}:",
         f"Valor do desconto: R${valor_do_desconto:.2f}",
         f"Valor com desconto: R${preco_com_desconto}",
         sep="\n"
