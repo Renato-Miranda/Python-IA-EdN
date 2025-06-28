@@ -3,8 +3,8 @@ def converter_moeda():
     taxa_dolar = 5.20
     taxa_euro = 6.15
 
-    dolar = valor_reais * taxa_dolar
-    euro = valor_reais * taxa_euro
+    dolar = valor_reais / taxa_dolar
+    euro = valor_reais / taxa_euro
 
     print(
         f"R${valor_reais} convertido em dólar fica: ${dolar:.2f}",
