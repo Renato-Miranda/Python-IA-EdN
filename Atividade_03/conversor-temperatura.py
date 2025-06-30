@@ -31,7 +31,7 @@ def conversor_temp():
         print(f"{celcius:.2f}")
     elif origem == "k" and destino == "f":
         kelvin = temperatura
-        fahrenheit = (k - 273.15) * 9/5 + 32
+        fahrenheit = (kelvin - 273.15) * 9/5 + 32
         print(F"{fahrenheit:.2f}")
     else:
         print("Algo de errado não está certo!!!")
