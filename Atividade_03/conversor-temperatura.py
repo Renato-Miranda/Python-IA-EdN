@@ -35,5 +35,5 @@ def conversor_temp():
         print(F"{fahrenheit:.2f}")
     else:
         print("Algo de errado não está certo!!!")
-        
+        return
 conversor_temp()
