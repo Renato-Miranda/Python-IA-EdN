@@ -3,11 +3,15 @@ import string
 def eh_palindromo():
     texto_original = str(input("Digite uma palavra para verificar se é palindrimo: ")).lower()
 
+    if any(char.isdigit() for char in texto_original):
+        print("Por favor, digite uma palavra ou frase sem números.")
+        return
+
     texto_tratado = ''. join(char for char in texto_original if char.isalnum())
     texto_invertido = texto_tratado[::-1]
 
-    if texto_tratado.isnumeric():
-        print("Por favor, digite uma palavra ou frase com letras (sem ser só números).")
+    if not texto_tratado:
+        print("Entrada inválida. Digite uma palavra ou frase com letras.")
         return
 
     if texto_tratado == texto_invertido:
