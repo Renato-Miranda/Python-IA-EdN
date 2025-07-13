@@ -1,9 +1,6 @@
 import csv
-
-# Nome do arquivo CSV a ser lido
 nome_arquivo = "pessoas.csv"
 
-# Lendo o arquivo CSV
 try:
     with open(nome_arquivo, mode='r', encoding='utf-8') as arquivo_csv:
         leitor = csv.DictReader(arquivo_csv)
