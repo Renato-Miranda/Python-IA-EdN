@@ -80,8 +80,8 @@
 
 # 3 Par ou ímpar:
 
-numero = int(input("Digite um número inteiro: "))
+# numero = int(input("Digite um número inteiro: "))
 
-eh_par = numero % 2 == 0
+# eh_par = numero % 2 == 0
 
-print(eh_par)
+# print(eh_par)
