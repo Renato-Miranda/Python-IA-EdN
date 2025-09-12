@@ -1,0 +1,1 @@
+convidados = ["Renata", "Henrique", "Felipe", "Bruna"]
