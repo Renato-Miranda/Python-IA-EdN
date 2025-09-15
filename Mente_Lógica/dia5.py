@@ -66,25 +66,25 @@
 
 # sequencia Fibonacci
 
-# N = int(input("Digite um número inteiro: "))
+N = int(input("Digite um número inteiro: "))
 
-# termo1 = 0
-# termo2 = 1
-# contador = 0 
+termo1 = 0
+termo2 = 1
+contador = 0 
 
-# if N <=0 :
-#     print("Digite um número positivo")
-# elif N == 1:
-#     print("Serie Fibonacci até", N, "Termo:")
-#     print(termo1)
-# else:
-#     print("Serie Fibonacci:")
-#     while contador < N:
-#         print(termo1)
-#         proximo_termo = termo1 + termo2
-#         termo1 = termo2
-#         termo2 = proximo_termo
-#         contador +=1
+if N <=0 :
+    print("Digite um número positivo")
+elif N == 1:
+    print("Serie Fibonacci até", N, "Termo:")
+    print(termo1)
+else:
+    print("Serie Fibonacci:")
+    while contador < N:
+        print(termo1)
+        proximo_termo = termo1 + termo2
+        termo1 = termo2
+        termo2 = proximo_termo
+        contador +=1
 
 # Jogo da forca:
 
