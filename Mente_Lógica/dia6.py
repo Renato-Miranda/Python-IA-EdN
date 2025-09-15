@@ -130,3 +130,17 @@
 # else:
 #     print("A lista de notas está vazia.")       
           
+# Contatando Palavras em um texto
+
+texto = input("Digite um texto: ").lower()
+palavras = texto.split()
+contagem_palavras = {}
+
+for palavra in palavras:
+    if palavra in contagem_palavras:
+        contagem_palavras[palavra] += 1
+    else:
+        contagem_palavras[palavra] = 1
+
+for palavra, contagem in contagem_palavras.items():
+    print(f"A palavra '{palavra}' aparece {contagem} vez(es)")
