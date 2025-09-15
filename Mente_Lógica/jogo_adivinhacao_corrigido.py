@@ -1,6 +1,7 @@
 import random
 
 pontuacoes = []
+palpites_feitos = []
 
 print("Bem-vindo ao jogo de Adivinhação!")
 dificuldade = input("\nSelecione uma dificuldade: Fácil = 'f', Média = 'm', Difícil = 'd': ").lower()
@@ -42,6 +43,12 @@ while True:
         tentativas += 1
         tentativas_restantes -= 1
 
+        if palpite in palpites_feitos:
+            print("Você já tentou esse número. Tente outro.")
+            continue
+        else:
+            palpites_feitos.append(palpite)
+
         if palpite == numero_secreto:
             print(f"Parabéns! Você acertou o número em {tentativas} tentativa(s).")
             pontuacao = tentativas_restantes * 10
@@ -50,8 +57,10 @@ while True:
             break
         elif palpite < numero_secreto:
             print("O número é maior que esse.")
+            print(f"Palpites já feitos: {palpites_feitos}")
         else:
             print("O número é menor que esse.")
+            print(f"Palpites já feitos: {palpites_feitos}")
 
         print(f"Tentativas restantes: {tentativas_restantes}")
 
