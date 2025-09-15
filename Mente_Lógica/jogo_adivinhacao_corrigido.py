@@ -51,7 +51,12 @@ while True:
 
         if palpite == numero_secreto:
             print(f"Parabéns! Você acertou o número em {tentativas} tentativa(s).")
-            pontuacao = tentativas_restantes * 10
+            if dificuldade == 'd':
+                pontuacao = tentativas_restantes * 10
+            elif dificuldade == 'm': 
+                pontuacao = tentativas_restantes * 5
+            else:
+                pontuacao = tentativas_restantes * 2
             pontuacoes.append(pontuacao)
             print(f"Sua pontuação nesta partida: {pontuacao} pontos.")
             break
