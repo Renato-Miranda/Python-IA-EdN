@@ -132,15 +132,27 @@
           
 # Contatando Palavras em um texto
 
-texto = input("Digite um texto: ").lower()
-palavras = texto.split()
-contagem_palavras = {}
+# texto = input("Digite um texto: ").lower()
+# palavras = texto.split()
+# contagem_palavras = {}
 
-for palavra in palavras:
-    if palavra in contagem_palavras:
-        contagem_palavras[palavra] += 1
-    else:
-        contagem_palavras[palavra] = 1
+# for palavra in palavras:
+#     if palavra in contagem_palavras:
+#         contagem_palavras[palavra] += 1
+#     else:
+#         contagem_palavras[palavra] = 1
 
-for palavra, contagem in contagem_palavras.items():
-    print(f"A palavra '{palavra}' aparece {contagem} vez(es)")
+# for palavra, contagem in contagem_palavras.items():
+#     print(f"A palavra '{palavra}' aparece {contagem} vez(es)")
+
+
+lista = ["Amigo", "Sapo", "Turma", "Renato", "Sábado", "Feriado"]
+numeros = [1, 2, 3, 2, 4, 2, 5]
+
+print(numeros.count(2))  # Conta quantas vezes o número 2 aparece
+
+numeros.reverse()
+print(numeros)
+
+numeros.sort()
+print(numeros)
