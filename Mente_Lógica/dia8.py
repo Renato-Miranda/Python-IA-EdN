@@ -111,3 +111,30 @@
 #     resultado = "Unidade inválida."
 
 # print(f"Temperatura convertida: {resultado} {converter_para}")
+
+# 4 Função para Fatorial
+
+def fatorial(n):
+    multiplicacao = 1
+    for i in range(1, n + 1):
+        multiplicacao *= i
+    return multiplicacao
+
+numero = int(input("Digite um número inteiro para descobrir o fatorial: "))
+resultado = fatorial(numero)
+print(resultado)
+
+# 4 Função recursiva para Fatorial
+
+def fatorial(n):
+    if n == 0 or n == 1:
+        return 1
+    else:
+        return n * fatorial(n - 1)
+    
+num = int(input("Digite um número inteiro positivo: "))
+if num >= 0:
+    resultado = fatorial(num)
+    print(f"O fatorial de {num} é {resultado}.")
+else:
+    print("Número inválido.")
