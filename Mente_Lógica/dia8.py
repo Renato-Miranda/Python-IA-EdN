@@ -160,25 +160,44 @@
 
 # print("Senha gerada:", senha_aleatoria(num))
 
+# Calculando a Distância Entre Dois Pontos
+
+# import math
+
+# x1 = 1
+# y1 = 2
+# x2 = 4
+# y2 = 6
+
+# def delta_X(x2 , x1):
+#     return (x2 - x1) ** 2
+
+# def delta_Y(y2, y1):
+#     return (y2 - y1) ** 2
+
+# def distancia(p1, p2):
+#     d = math.sqrt(p1 + p2)
+#     return d
+
+# dx2 = delta_X(x2, x1)
+# dy2 = delta_Y(y2, y1)
+
+# resultado = distancia(dx2, dy2)
+# print(f"Resultado é: {resultado}")
+
+# Calculando a Distância Entre Dois Pontos - Livro:
+
 import math
 
-x1 = 1
-y1 = 2
-x2 = 4
-y2 = 6
+def distancia(ponto1, ponto2):
+    x1, y1 = ponto1
+    x2, y2 = ponto2
+    return math.sqrt((x2 - x1) ** 2 + (y2 - y1) ** 2)
 
-def delta_X(x2 , x1):
-    return (x2 - x1) ** 2
+x1 = float(input("Digite x1: "))
+y1 = float(input("Digite y1: "))
+x2 = float(input("Digite x2: "))
+y2 = float(input("Digite y2: "))
 
-def delta_Y(y2, y1):
-    return (y2 - y1) ** 2
-
-def distancia(p1, p2):
-    d = math.sqrt(p1 + p2)
-    return d
-
-dx2 = delta_X(x2, x1)
-dy2 = delta_Y(y2, y1)
-
-resultado = distancia(dx2, dy2)
-print(f"Resultado é: {resultado}")
+dist = distancia((x1, y1), (x2, y2))
+print(f"A distância entre os pontos é: {dist}")
