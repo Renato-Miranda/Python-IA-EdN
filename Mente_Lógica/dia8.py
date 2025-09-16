@@ -114,27 +114,48 @@
 
 # 4 Função para Fatorial
 
-def fatorial(n):
-    multiplicacao = 1
-    for i in range(1, n + 1):
-        multiplicacao *= i
-    return multiplicacao
+# def fatorial(n):
+#     multiplicacao = 1
+#     for i in range(1, n + 1):
+#         multiplicacao *= i
+#     return multiplicacao
 
-numero = int(input("Digite um número inteiro para descobrir o fatorial: "))
-resultado = fatorial(numero)
-print(resultado)
+# numero = int(input("Digite um número inteiro para descobrir o fatorial: "))
+# resultado = fatorial(numero)
+# print(resultado)
 
 # 4 Função recursiva para Fatorial
 
-def fatorial(n):
-    if n == 0 or n == 1:
-        return 1
-    else:
-        return n * fatorial(n - 1)
+# def fatorial(n):
+#     if n == 0 or n == 1:
+#         return 1
+#     else:
+#         return n * fatorial(n - 1)
     
-num = int(input("Digite um número inteiro positivo: "))
-if num >= 0:
-    resultado = fatorial(num)
-    print(f"O fatorial de {num} é {resultado}.")
-else:
-    print("Número inválido.")
+# num = int(input("Digite um número inteiro positivo: "))
+# if num >= 0:
+#     resultado = fatorial(num)
+#     print(f"O fatorial de {num} é {resultado}.")
+# else:
+#     print("Número inválido.")
+
+# Gerador de senhas aleatórias:
+
+import random
+import string
+
+def senha_aleatoria(tamanho):
+    letras_maiusculas = string.ascii_uppercase
+    letras_minusculas = string.ascii_lowercase
+    numeros = string.digits
+    pontuacao = string.punctuation
+
+    todos_caracteres = letras_maiusculas + letras_minusculas + numeros + pontuacao
+
+    senha = ''.join(random.choice(todos_caracteres) for _ in range(tamanho))
+
+    return senha
+
+num = int(input("Digite um número inteiro para gerar tamanho da senha: "))
+
+print("Senha gerada:", senha_aleatoria(num))
