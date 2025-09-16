@@ -187,17 +187,32 @@
 
 # Calculando a Distância Entre Dois Pontos - Livro:
 
-import math
+# import math
 
-def distancia(ponto1, ponto2):
-    x1, y1 = ponto1
-    x2, y2 = ponto2
-    return math.sqrt((x2 - x1) ** 2 + (y2 - y1) ** 2)
+# def distancia(ponto1, ponto2):
+#     x1, y1 = ponto1
+#     x2, y2 = ponto2
+#     return math.sqrt((x2 - x1) ** 2 + (y2 - y1) ** 2)
 
-x1 = float(input("Digite x1: "))
-y1 = float(input("Digite y1: "))
-x2 = float(input("Digite x2: "))
-y2 = float(input("Digite y2: "))
+# x1 = float(input("Digite x1: "))
+# y1 = float(input("Digite y1: "))
+# x2 = float(input("Digite x2: "))
+# y2 = float(input("Digite y2: "))
 
-dist = distancia((x1, y1), (x2, y2))
-print(f"A distância entre os pontos é: {dist}")
+# dist = distancia((x1, y1), (x2, y2))
+# print(f"A distância entre os pontos é: {dist}")
+
+# Verificador de Palíndromo:
+
+def eh_palindromo(texto):
+    caracteres = texto.replace(" ", "").lower()
+    invertido = ''.join(reversed(caracteres))
+
+    if caracteres != invertido:
+        return print("O texto inserido NÂO é um palíndro.")
+    else:
+        return print("O texto inserido É um palíndro. ")
+
+texto = input("Digite uma palavra ou frase: ")
+
+eh_palindromo(texto)
