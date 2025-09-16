@@ -141,21 +141,44 @@
 
 # Gerador de senhas aleatórias:
 
-import random
-import string
+# import random
+# import string
 
-def senha_aleatoria(tamanho):
-    letras_maiusculas = string.ascii_uppercase
-    letras_minusculas = string.ascii_lowercase
-    numeros = string.digits
-    pontuacao = string.punctuation
+# def senha_aleatoria(tamanho):
+#     letras_maiusculas = string.ascii_uppercase
+#     letras_minusculas = string.ascii_lowercase
+#     numeros = string.digits
+#     pontuacao = string.punctuation
 
-    todos_caracteres = letras_maiusculas + letras_minusculas + numeros + pontuacao
+#     todos_caracteres = letras_maiusculas + letras_minusculas + numeros + pontuacao
 
-    senha = ''.join(random.choice(todos_caracteres) for _ in range(tamanho))
+#     senha = ''.join(random.choice(todos_caracteres) for _ in range(tamanho))
 
-    return senha
+#     return senha
 
-num = int(input("Digite um número inteiro para gerar tamanho da senha: "))
+# num = int(input("Digite um número inteiro para gerar tamanho da senha: "))
 
-print("Senha gerada:", senha_aleatoria(num))
+# print("Senha gerada:", senha_aleatoria(num))
+
+import math
+
+x1 = 1
+y1 = 2
+x2 = 4
+y2 = 6
+
+def delta_X(x2 , x1):
+    return (x2 - x1) ** 2
+
+def delta_Y(y2, y1):
+    return (y2 - y1) ** 2
+
+def distancia(p1, p2):
+    d = math.sqrt(p1 + p2)
+    return d
+
+dx2 = delta_X(x2, x1)
+dy2 = delta_Y(y2, y1)
+
+resultado = distancia(dx2, dy2)
+print(f"Resultado é: {resultado}")
