@@ -51,3 +51,18 @@
 #      if 'arquivo' in locals():
 #         arquivo.close()
 #         print("Arquivo fechado.")
+
+#Conversão de dados com Tratamento de Exceções:
+
+# def obter_idade():
+#     while True:
+#         try:
+#             idade = int(input("Digite sua idade: "))
+#             if idade < 0:
+#                 raise ValueError ("A idade não pode ser negativa.")
+#             return idade
+#         except ValueError as ve:
+#             print(f"Erro: {ve}")
+
+# idade_usuario = obter_idade()
+# print(f"Sua idade é: {idade_usuario}")
