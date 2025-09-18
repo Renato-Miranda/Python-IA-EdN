@@ -62,3 +62,18 @@
 # print(contagem) 
 
 # União e interseção de Conjuntos:
+
+# numeros_a = input("Conjunto A: ").split()
+# numeros_b = input("Conjunto B: ").split()
+
+# conjunto_a = set(numeros_a)
+# conjunto_b = set(numeros_b)
+
+# uniao = conjunto_a.union(conjunto_b)
+# intersecao = conjunto_a.intersection(conjunto_b)
+
+# print(f"Conjunto A: {conjunto_a}")
+# print(f"Conjunto B: {conjunto_b}")
+
+# print(f"União dos conjuntos: {uniao}")
+# print(f"Interseção dos conjuntos: {intersecao}")
