@@ -103,15 +103,45 @@
 
 # 3 Conversão de Temperaturas com Validação.
 
-def celcius_para_fahrenheit():
-    try:
-        celcius = float(input("Digite a temperatura em celcius: "))
-        fahrenheit = celcius * 9/5 + 32
-    except ValueError:
-        print("Erro: Por favor, insira um valor numérico.")
-    except Exception as e:
-        print(f"Erro: {e}")
-    else:
-        print(f"A temperatura em Fahrenheit é: {fahrenheit:.2f}°F")
+# def celcius_para_fahrenheit():
+#     try:
+#         celcius = float(input("Digite a temperatura em celcius: "))
+#         fahrenheit = celcius * 9/5 + 32
+#     except ValueError:
+#         print("Erro: Por favor, insira um valor numérico.")
+#     except Exception as e:
+#         print(f"Erro: {e}")
+#     else:
+#         print(f"A temperatura em Fahrenheit é: {fahrenheit:.2f}°F")
 
-celcius_para_fahrenheit()
+# celcius_para_fahrenheit()
+
+# 4 Sistema de login
+
+# class UsuarioNaoEncontradoError(Exception):
+#     pass
+# class SenhaincorretaError(Exception):
+#     pass
+
+# usuarios = {
+#     'admin': '1234',
+#     'usuario1': 'senha1',
+#     'cliente1': 'sonic'
+# }
+
+# def login():
+#     try: 
+#         nome_usuario = input("Nome de usuário: ")
+#         senha = input("Senha: ")
+#         if nome_usuario not in usuarios:
+#             raise UsuarioNaoEncontradoError("Usuário não encontrado.")
+#         elif usuarios[nome_usuario] != senha:
+#             raise SenhaincorretaError("Senha incorreta.")
+#     except UsuarioNaoEncontradoError as e:
+#         print(f"Erro: {e}")
+#     except SenhaincorretaError as e:
+#         print(f"Erro: {e}")
+#     else:
+#         print("Login realizado com sucesso.")
+
+# login()
