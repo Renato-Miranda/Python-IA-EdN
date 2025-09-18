@@ -69,17 +69,34 @@
 
 # 1. Divisão segura:
 
-def divisao_segura():
+# def divisao_segura():
+#     try:
+#         numero1 = float(input("Digite o primeiro número: "))
+#         numero2 = float(input("Dividir por: "))
+#         resultado = numero1 / numero2
+#     except ValueError as ve:
+#         print(f"Erro de valor: {ve}")
+#     except ZeroDivisionError:
+#         print("Erro divisão por zero, Tente outro número.")
+#     else:
+#         print(f"A divisão de {numero1} por {numero2} é: {resultado}")
+
+
+# divisao_segura()
+
+# Abertura de Arquivo com Verificação:
+
+def ler_arquivo_usuario():
+    nome_arquivo = input("Digite o nome do arquivo: ")
     try:
-        numero1 = float(input("Digite o primeiro número: "))
-        numero2 = float(input("Dividir por: "))
-        resultado = numero1 / numero2
-    except ValueError as ve:
-        print(f"Erro de valor: {ve}")
-    except ZeroDivisionError:
-        print("Erro divisão por zero, Tente outro número.")
-    else:
-        print(f"A divisão de {numero1} por {numero2} é: {resultado}")
+        with open(nome_arquivo, 'r') as arquivo:
+            conteudo = arquivo.read()
+            print(conteudo)
+    except FileNotFoundError:
+        print("Erro: O arquivo não existe.")
+    except PermissionError:
+        print("Erro: Sem permissão para ler o arquivo.")
+    except Exception as e:
+        print(f"Ocorreu um erro: {e}")
 
-
-divisao_segura()
+ler_arquivo_usuario()
