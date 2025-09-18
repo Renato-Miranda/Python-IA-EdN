@@ -77,3 +77,17 @@
 
 # print(f"União dos conjuntos: {uniao}")
 # print(f"Interseção dos conjuntos: {intersecao}")
+
+texto = input("Digite seu texto: ").lower()
+texto_sem_espaco = texto.replace(" ", "")
+contagem = {}
+
+for letra in texto_sem_espaco:
+    if letra in contagem:
+        contagem[letra] += 1
+    else:
+        contagem[letra] = 1
+
+print("Contagem de caracteres:")
+for caractere, quantidade in contagem.items():
+    print(f"{caractere}: {quantidade}")
