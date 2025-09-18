@@ -86,17 +86,32 @@
 
 # Abertura de Arquivo com Verificação:
 
-def ler_arquivo_usuario():
-    nome_arquivo = input("Digite o nome do arquivo: ")
-    try:
-        with open(nome_arquivo, 'r') as arquivo:
-            conteudo = arquivo.read()
-            print(conteudo)
-    except FileNotFoundError:
-        print("Erro: O arquivo não existe.")
-    except PermissionError:
-        print("Erro: Sem permissão para ler o arquivo.")
-    except Exception as e:
-        print(f"Ocorreu um erro: {e}")
+# def ler_arquivo_usuario():
+#     nome_arquivo = input("Digite o nome do arquivo: ")
+#     try:
+#         with open(nome_arquivo, 'r') as arquivo:
+#             conteudo = arquivo.read()
+#             print(conteudo)
+#     except FileNotFoundError:
+#         print("Erro: O arquivo não existe.")
+#     except PermissionError:
+#         print("Erro: Sem permissão para ler o arquivo.")
+#     except Exception as e:
+#         print(f"Ocorreu um erro: {e}")
 
-ler_arquivo_usuario()
+# ler_arquivo_usuario()
+
+# 3 Conversão de Temperaturas com Validação.
+
+def celcius_para_fahrenheit():
+    try:
+        celcius = float(input("Digite a temperatura em celcius: "))
+        fahrenheit = celcius * 9/5 + 32
+    except ValueError:
+        print("Erro: Por favor, insira um valor numérico.")
+    except Exception as e:
+        print(f"Erro: {e}")
+    else:
+        print(f"A temperatura em Fahrenheit é: {fahrenheit:.2f}°F")
+
+celcius_para_fahrenheit()
