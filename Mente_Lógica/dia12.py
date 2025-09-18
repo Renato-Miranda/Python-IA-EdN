@@ -145,3 +145,21 @@
 #         print("Login realizado com sucesso.")
 
 # login()
+
+# Manipulação segura de listas:
+
+lista = ['maçã', 'banana', 'laranja']
+
+def acessar_elemento():
+    try:
+        indice = int(input("Digite um número inteiro: "))
+        elemento = lista[indice]
+    except IndexError:
+        print("Erro: Índice fora do intervalo da lista.")
+    except ValueError:
+        print("Erro: por favor, insira um número inteiro.")
+    else:
+        print(f"O elemento no índice {indice} é {elemento}")
+
+acessar_elemento()
+    
