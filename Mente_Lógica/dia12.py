@@ -33,3 +33,21 @@
 #         print(f"Resulta da divisão entre {numero1} / {numero2} é igual: {resultado}")
 # except (ValueError , ZeroDivisionError) as e:
 #     print(f"Erro: {e}")
+
+#Acesso a arquivos com Tratamento de Exceções:
+
+# import os
+
+# try:
+#     arquivo = open('dados.txt', 'r')
+#     conteudo = arquivo.read()
+# except FileNotFoundError as fnf:
+#         print(f"Erro: {fnf}")
+# except Exception as e:
+#      print(f"Ocorreu um erro inesperado: {e}")
+# else: 
+#     print("Arquivo lido com sucesso!")
+# finally:
+#      if 'arquivo' in locals():
+#         arquivo.close()
+#         print("Arquivo fechado.")
