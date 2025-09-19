@@ -61,3 +61,18 @@
 #         break
 #     else:
 #         print("Opção inválida.")
+
+# 3 Leitor de arquivos Json:
+import json
+
+try:
+    with open('produtos.json', 'r') as arquivo_json:
+        produtos = json.load(arquivo_json)
+except FileNotFoundError:
+    print("Arquivo não encontrado.")
+else:
+    for produto in produtos:
+        print(f"Nome: {produto['nome']}")
+        print(f"Preço: R${produto['preco']:.2f}")
+        print(f"Quantidade: {produto['quantidade']}")
+        print("-" * 20)
