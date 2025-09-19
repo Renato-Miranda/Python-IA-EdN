@@ -90,3 +90,33 @@
 #     print("Arquivo de origem não encontrado.")
 # else:
 #     print(f"Arquivo de {destino} criado com sucesso.")
+
+# Calculadora de Notas:
+
+# import csv
+
+# notas_alunos = []
+
+# try:
+#     with open('notas.csv', 'r') as arquivo_csv:
+#         leitor = csv.DictReader(arquivo_csv)
+#         for linha in leitor:
+#             nome = linha['Nome']
+#             nota1 = float(linha['Nota1'])
+#             nota2 = float(linha['Nota2'])
+#             nota3 = float(linha['Nota3'])
+#             media = (nota1 + nota2 + nota3) / 3
+#             notas_alunos.append({'Nome': nome, 'Media': round(media, 2)})
+# except FileNotFoundError:
+#     print("Arquivo de notas não encontrado.")
+# except ValueError as e:
+#     print("Erro:", e )
+# else:
+#     with open('medias.csv', 'w', newline='') as arquivo_csv:
+#         campos = ['Nome', 'Media']
+#         escritor = csv.DictWriter(arquivo_csv, fieldnames=campos)
+#         escritor.writeheader()
+#         for aluno in notas_alunos:
+#             escritor.writerow(aluno)
+#         print("Médias calculadas e salvas no arquivo 'medias.cv'")
+
