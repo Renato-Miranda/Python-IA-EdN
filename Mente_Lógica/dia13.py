@@ -63,16 +63,30 @@
 #         print("Opção inválida.")
 
 # 3 Leitor de arquivos Json:
-import json
+# import json
 
-try:
-    with open('produtos.json', 'r') as arquivo_json:
-        produtos = json.load(arquivo_json)
-except FileNotFoundError:
-    print("Arquivo não encontrado.")
-else:
-    for produto in produtos:
-        print(f"Nome: {produto['nome']}")
-        print(f"Preço: R${produto['preco']:.2f}")
-        print(f"Quantidade: {produto['quantidade']}")
-        print("-" * 20)
+# try:
+#     with open('produtos.json', 'r') as arquivo_json:
+#         produtos = json.load(arquivo_json)
+# except FileNotFoundError:
+#     print("Arquivo não encontrado.")
+# else:
+#     for produto in produtos:
+#         print(f"Nome: {produto['nome']}")
+#         print(f"Preço: R${produto['preco']:.2f}")
+#         print(f"Quantidade: {produto['quantidade']}")
+#         print("-" * 20)
+
+# 4 Copiador de Arquivos:
+# origem = input("Digite o nome do arquivo de origem: ")
+# destino = input("Digite o nome do arquivo de destino: ")
+
+# try:
+#     with open(origem, 'rb') as arquivo_origem:
+#         conteudo = arquivo_origem.read()
+#     with open(destino, 'wb') as arquivo_destino:
+#          arquivo_destino.write(conteudo)
+# except FileNotFoundError:
+#     print("Arquivo de origem não encontrado.")
+# else:
+#     print(f"Arquivo de {destino} criado com sucesso.")
