@@ -206,15 +206,42 @@
 
 # 4 Copiador de Arquivos
 
-origem = input("Digite o nome do arquivo de origem: ")
-destino = input("Digite o nome do arquivo de destino: ")
+# origem = input("Digite o nome do arquivo de origem: ")
+# destino = input("Digite o nome do arquivo de destino: ")
+
+# try:
+#     with open(origem, 'rb') as arquivo_origem:
+#         conteudo = arquivo_origem.read()
+#     with open(destino, 'wb') as arquivo_destino:
+#         arquivo_destino.write(conteudo)
+# except FileNotFoundError:
+#     print("Arquivo de origem não encontrado.")
+# else:
+#     print(f"Arquivo {destino} criado com sucesso.")
+
+# 5 Calculadora de Notas:
+
+import csv
+
+notas_alunos = []
 
 try:
-    with open(origem, 'rb') as arquivo_origem:
-        conteudo = arquivo_origem.read()
-    with open(destino, 'wb') as arquivo_destino:
-        arquivo_destino.write(conteudo)
+    with open('notas.csv', 'r') as arquivo_csv:
+        leitor = csv.DictReader(arquivo_csv)
+        for linha in leitor:
+            nome = linha['nome']
+            nota1 = float(linha['nota1'])
+            nota2 = float(linha['nota2'])
+            nota3 = float(linha['nota3'])
+            media = (nota1 + nota2 + nota3) / 3
+            notas_alunos.append({'Nome': nome, 'Média': round(media, 2)})
 except FileNotFoundError:
-    print("Arquivo de origem não encontrado.")
+    print("Arquivo de notas não encontrado.")
 else:
-    print(f"Arquivo {destino} criado com sucesso.")
+    with open('medias.csv', 'w', newline='') as arquivo_csv:
+        campos = ['Nome', 'Média']
+        escritor = csv.DictWriter(arquivo_csv, fieldnames=campos)
+        escritor.writeheader()
+        for aluno in notas_alunos:
+            escritor.writerow(aluno)
+    print("Médias calculadas e salvas no arquivo 'medias.csv'")
