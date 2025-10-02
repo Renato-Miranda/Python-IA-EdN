@@ -76,4 +76,67 @@ def concluir_tarefa(tarefas):
             print("Tarefa não encontrada.")
     except ValueError:
         print("ID inválido.")
-        
+
+def remover_tarefa(tarefas):
+    try:
+        id_tarefa = int(input("Digite o ID da tarefa a ser revmovida: "))
+        for tarefa in tarefas:
+            if tarefa['id'] == id_tarefa:
+                tarefas.remove(tarefa)
+                salvar_terefas(tarefas)
+                print("Tarefa removida com sucesso!")
+                return
+        print("Tarefa não encontrada.")
+    except ValueError:
+        print("ID inválido")
+
+def pesquisar_tarefas(tarefas):
+    termo = input("Digite o termo de pesquisa: ").lower()
+    resultados = [t for t in tarefas if termo in t['titulo'].lower() or termo in t['descricao'].lower()]
+    if resultados:
+        print(f"\nTarefas que contêm '{termo}'")
+        for tarefa in resultados:
+            status = "Concluída" if tarefa['concluida'] else "Pendente"
+            print(f"ID: {tarefa['id']}, Título: {tarefa['titulo']}, Status: {status}, Data: {tarefa['data']}")
+    else: 
+        print("Nenhuma tarefa encontrada com o termo especificado.")
+
+def ordenar_tarefas(tarefas):
+    tarefas.sort(key=lambda X: datetime.strptime(X['data'], '%d/%m/%Y'))
+    salvar_terefas(tarefas)
+    print("Tarefas ordenas por data de conclusão com sucesso!")
+
+def menu():
+    print("\n==== Gerenciador de Tarefas Avançado ====")
+    print("1. Adicionar Tarefa")
+    print("2. Listar Tarefas")
+    print("3. Concluir Tarefa")
+    print("4. Remover Tarefa")
+    print("5. Pesquisar Tarefas")
+    print("6. Ordenar Tarefas por Data")
+    print("7. Sair")
+    opcao = input("Escolha uma opção: ")
+    return opcao
+
+def main():
+    tarefas = carregar_tarefas()
+    while True:
+        opcao = menu()
+        if opcao == '1':
+            adicionar_tarefa(tarefas)
+        elif opcao == '2':
+            listar_tarefas(tarefas)
+        elif opcao == '3':
+            concluir_tarefa(tarefas)
+        elif opcao == '4':
+            remover_tarefa(tarefas)
+        elif opcao == '5':
+            pesquisar_tarefas(tarefas)
+        elif opcao == '6':
+            ordenar_tarefas(tarefas)
+        elif opcao == '7':
+            print("Encerrando o programa...")
+            break
+        else:
+            print("Opção inválida. Por favor, escolha uma opção válida.")
+
