@@ -106,6 +106,34 @@ def ordenar_tarefas(tarefas):
     salvar_terefas(tarefas)
     print("Tarefas ordenas por data de conclusão com sucesso!")
 
+def editar_tarefa(tarefas):
+    try:
+        id_tarefa = int(input("Digite o ID da tarefa a ser editada: "))
+        for tarefa in tarefas:
+            if tarefa['id'] == id_tarefa:
+                print(f"Editar tarefa ID {id_tarefa}:")
+                novo_titulo = input(f"Novo Título (atual: {tarefa['titulo']}): ") or tarefa['titulo']
+                nova_descricao = input(f"Nova descrição (atual: {tarefa['descricao']}): ") or tarefa['descricao']
+                nova_data = input(f"Nova data de conclusão (atual: {tarefa['data']}, formato dd/mm/aaaa): ") or tarefa['data']
+                try:
+                    data_obj = datetime.strptime(nova_data, '%d/%m/%Y')
+                    if data_obj.date() < datetime.now().date():
+                        print("Data de conclusão não pode ser no passado.")
+                        return
+                    tarefa['data'] = data_obj.strftime('%d/%m/%Y')
+                except ValueError:
+                    print("Data em formato inválido. Utilize dd/mm/aaaa.")
+                    return
+                tarefa['titulo'] = novo_titulo
+                tarefa['descricao'] = nova_descricao
+                salvar_terefas(tarefas)
+                print("Tarefa editada com sucesso!")
+                return
+            print("Tarefa não encontrada.")
+    except ValueError:
+        print("ID inválido.")
+
+
 def menu():
     print("\n==== Gerenciador de Tarefas Avançado ====")
     print("1. Adicionar Tarefa")
@@ -114,7 +142,8 @@ def menu():
     print("4. Remover Tarefa")
     print("5. Pesquisar Tarefas")
     print("6. Ordenar Tarefas por Data")
-    print("7. Sair")
+    print("7. Editar Tarefa")
+    print("8. Sair")
     opcao = input("Escolha uma opção: ")
     return opcao
 
@@ -135,6 +164,8 @@ def main():
         elif opcao == '6':
             ordenar_tarefas(tarefas)
         elif opcao == '7':
+            editar_tarefa(tarefas)
+        elif opcao == '8':
             print("Encerrando o programa...")
             break
         else:

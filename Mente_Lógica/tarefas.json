@@ -1,9 +1,16 @@
 [
     {
         "id": 1,
-        "titulo": "Sair domingo",
-        "descricao": "quero fazer algo diferente pela cidade.",
+        "titulo": "Sair domingo a tarde",
+        "descricao": "algo diferente no domingo",
         "data": "05/10/2025",
         "concluida": true
+    },
+    {
+        "id": 1,
+        "titulo": "sair",
+        "descricao": "em algum lugar",
+        "data": "03/10/2025",
+        "concluida": false
     }
 ]
